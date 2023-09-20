@@ -95,6 +95,12 @@ const ImageGallery = () => {
         )}
       </div>
 
+      <div className="mx-auto flex items-center justify-center pb-5">
+        <p className="text-gray-500 font-medium">
+          {`Cooked with Love ❤️ by Hills.Dev </>`}
+        </p>
+      </div>
+
       <UploadModal
         openModal={openModal}
         setOpenModal={setOpenModal}
