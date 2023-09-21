@@ -4,7 +4,7 @@ type ImageCardProps = {
   tag?: string[];
 };
 const ImageCard = ({ image, tag }: ImageCardProps) => {
-  console.log(tag);
+  // console.log(tag);
 
   return (
     <div className="rounded-[10px]">

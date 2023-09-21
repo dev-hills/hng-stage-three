@@ -4,16 +4,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Splash from "./Components/Splash";
 
 const App = () => {
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("user");
     const currentLocation = window.location.pathname;
 
-    if (isAuthenticated && currentLocation === "/login") {
+    if (isAuthenticated && currentLocation === "/") {
+      window.location.href = "/home";
+    } else if (!isAuthenticated && currentLocation === "/home") {
       window.location.href = "/";
-    } else if (!isAuthenticated && currentLocation === "/") {
-      window.location.href = "/login";
     }
   });
 
@@ -30,7 +31,8 @@ const App = () => {
         <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Splash />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
           </Routes>
         </BrowserRouter>

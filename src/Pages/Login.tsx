@@ -33,7 +33,7 @@ const Login = () => {
           position: toast.POSITION.TOP_RIGHT,
         });
 
-        navigate("/");
+        navigate("/home");
       })
       .catch(() => {
         toast.error("Invalid Login Credentials", {
